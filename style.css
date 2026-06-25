@@ -48,7 +48,7 @@ button:hover{
 
     position:fixed;
 
-    width:min(350px,85vw);
+    width:min(320px,80vw);
 
     background:white;
 
@@ -285,5 +285,46 @@ button:hover{
 
     50%{
         transform:translateY(10px);
+    }
+}
+
+/* PHONE */
+
+@media (max-width:600px){
+
+    .popup{
+
+        width:85vw;
+
+        max-width:280px;
+    }
+
+    .content{
+
+        padding:15px;
+    }
+
+    .content h2{
+
+        font-size:22px;
+    }
+
+    .content p{
+
+        font-size:14px;
+    }
+
+    .warning{
+
+        font-size:45px;
+    }
+
+    .popup button{
+
+        width:100%;
+
+        font-size:16px;
+
+        padding:12px;
     }
 }
