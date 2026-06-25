@@ -1,0 +1,289 @@
+body{
+    margin:0;
+    overflow:hidden;
+    font-family:Arial, sans-serif;
+    background:black;
+    color:white;
+}
+
+/* BOOT SCREEN */
+
+#boot{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+#boot h1{
+    color:red;
+    font-size:60px;
+    animation:blink 0.5s infinite;
+}
+
+#boot p{
+    font-size:22px;
+    width:70%;
+}
+
+button{
+    padding:15px 30px;
+    border:none;
+    border-radius:12px;
+    font-size:18px;
+    cursor:pointer;
+    background:#fe0202;
+    color:white;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+/* POPUPS */
+
+.popup{
+
+    position:fixed;
+
+    width:min(350px,85vw);
+
+    background:white;
+
+    color:black;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    box-shadow:0 0 25px rgba(0,0,0,.5);
+
+    z-index:9999;
+
+    animation:shake .4s infinite;
+}
+
+.topbar{
+    background:#0078d7;
+    color:white;
+    padding:12px;
+    font-weight:bold;
+}
+
+.content{
+    padding:20px;
+    text-align:center;
+}
+
+.warning{
+    font-size:60px;
+}
+
+/* SHUTDOWN SCREEN */
+
+#shutdownScreen{
+
+    display:none;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:#a00000;
+
+    color:white;
+
+    z-index:99999;
+
+    justify-content:center;
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+}
+
+#shutdownScreen h1{
+
+    font-size:clamp(30px,6vw,70px);
+
+    animation:blink 0.5s infinite;
+}
+
+#shutdownScreen p{
+
+    font-size:clamp(18px,3vw,30px);
+}
+
+#countdown{
+
+    font-size:120px;
+
+    font-weight:bold;
+
+    margin-top:20px;
+}
+
+/* FINAL SCREEN */
+
+#final{
+
+    display:none;
+
+    height:100vh;
+    width:100vw;
+
+    justify-content:center;
+    align-items:center;
+
+    flex-direction:column;
+
+    background-image:url("image/pec.png");
+
+    background-size:cover;
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    position:relative;
+}
+
+.grad-card{
+
+    background:rgba(0,0,0,0.60);
+
+    padding:40px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    width:90%;
+    max-width:750px;
+
+    backdrop-filter:blur(8px);
+
+    box-shadow:0 0 40px rgba(0,0,0,.7);
+
+    position:relative;
+    z-index:100;
+}
+
+.grad-card h1{
+
+    color:white;
+
+    font-size:clamp(28px,4vw,70px);
+
+    margin-bottom:20px;
+
+    word-wrap:break-word;
+}
+
+#card2{
+    display:none;
+}
+
+.finalText{
+
+    color:white;
+
+    font-size:clamp(18px, 4vw, 32px);
+
+    line-height:1.6;
+
+    font-weight:bold;
+}
+
+.arrow{
+
+    display:inline-block;
+
+    font-size:32px;
+
+    font-weight:bold;
+
+    color:#FFD700;
+
+    background:linear-gradient(45deg,#ffcc00,#ff6600);
+
+    padding:12px 25px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    margin-top:20px;
+
+    box-shadow:0 0 15px rgba(255,204,0,.7);
+
+    animation:bounce 1s infinite;
+}
+
+#hiddenMessage{
+
+    display:none;
+
+    margin-top:20px;
+
+    font-size:22px;
+
+    color:white;
+}
+
+/* CONFETTI */
+
+.confetti{
+    position:absolute;
+    width:10px;
+    height:10px;
+    animation:fall linear infinite;
+
+    z-index: 1;
+}
+
+/* ANIMATIONS */
+
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
+}
+
+@keyframes shake{
+
+    25%{
+        transform:translateX(1px);
+    }
+
+    50%{
+        transform:translateX(-1px);
+    }
+
+    75%{
+        transform:translateY(1px);
+    }
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-150px) rotate(0deg);
+    }
+
+    to{
+        transform:translateY(110vh) rotate(720deg);
+    }
+}
+
+@keyframes bounce{
+
+    50%{
+        transform:translateY(10px);
+    }
+}
